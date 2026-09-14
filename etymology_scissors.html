@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная этимология слова «Ножницы»</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: var(--accent-color);
+            padding: 16px;
+            text-align: left;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 18px 16px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        tr.table-row {
+            transition: background-color 0.2s ease;
+        }
+
+        tr.table-row:hover {
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        code {
+            background: #0f172a;
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: #f43f5e;
+            font-size: 1rem;
+        }
+
+        .phonetic {
+            font-weight: bold;
+            color: #a855f7;
+            margin-right: 8px;
+        }
+
+        .audio-btn {
+            background-color: var(--accent-color);
+            color: #0f172a;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .audio-btn:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .info-icon {
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .info-icon:hover {
+            transform: scale(1.3);
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            padding: 24px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 12px; right: 16px;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .close-btn:hover { color: var(--text-main); }
+
+        footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>✂️ Этимологический анализ слова «НОЖНИЦЫ»</h1>
+        <p class="subtitle">Интерактивный плакат-таблица исторического развития слова</p>
+    </header>
+<table>
+        <thead>
+            <tr>
+                <th style="width: 22%;">Время (Период)</th>
+                <th style="width: 20%;">Написание слова</th>
+                <th style="width: 28%;">Транскрипция и произношение</th>
+                <th style="width: 30%;">Перевод / Значение слова</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="table-row">
+            <td class="col-time">До III тыс. до н.э.<br><em>(Праиндоевропейский язык)</em></td>
+            <td class="col-spelling"><code>*neǵh- / *nógh-</code></td>
+            <td class="col-transcription">
+                <span class="phonetic">[*негь-] / [*ногь-]</span>
+                <button class="audio-btn" onclick="speak('негь')" title="Прослушать произношение">
+                    🔊 Озвучить
+                </button>
+            </td>
+            <td class="col-meaning">
+                «Колоть», «пронзать», «втыкать» (первичный глагольный корень физического действия).
+                <span class="info-icon" onclick="showModal('*neǵh- / *nógh-', 'Индоевропейский корень обозначал резкое пронзающее движение. От него же происходят слова 'низать' и 'внзать'.')" title="Нажмите для подробностей">ℹ️</span>
+            </td>
+        </tr>
+        
+        <tr class="table-row">
+            <td class="col-time">VI–IX вв.<br><em>(Праславянский язык)</em></td>
+            <td class="col-spelling"><code>*nožь → *nožicě</code></td>
+            <td class="col-transcription">
+                <span class="phonetic">[*ножь] → [*ножи́цэ]</span>
+                <button class="audio-btn" onclick="speak('ножицэ')" title="Прослушать произношение">
+                    🔊 Озвучить
+                </button>
+            </td>
+            <td class="col-meaning">
+                Буквально: «два маленьких ножичка», «двойной режущий инструмент» (форма двойственного числа от *nožь).
+                <span class="info-icon" onclick="showModal('*nožь → *nožicě', 'Суффикс *-icě* образовал форму двойственного числа (двух симметричных предметов), указывая на конструкцию из двух лезвий.')" title="Нажмите для подробностей">ℹ️</span>
+            </td>
+        </tr>
+        
+        <tr class="table-row">
+            <td class="col-time">XI–XIV вв.<br><em>(Древнерусский язык)</em></td>
+            <td class="col-spelling"><code>ножицѣ / ножице</code></td>
+            <td class="col-transcription">
+                <span class="phonetic">[ножи́цѣ]</span>
+                <button class="audio-btn" onclick="speak('ножицэ')" title="Прослушать произношение">
+                    🔊 Озвучить
+                </button>
+            </td>
+            <td class="col-meaning">
+                Парный режущий инструмент пружинного типа (два лезвия, соединенные дугообразной пластиной).
+                <span class="info-icon" onclick="showModal('ножицѣ / ножице', 'В древнерусских археологических находках Новгорода 'ножицѣ' были пружинными, а не шарнирными (без гвоздика посередине).')" title="Нажмите для подробностей">ℹ️</span>
+            </td>
+        </tr>
+        
+        <tr class="table-row">
+            <td class="col-time">XV–XVII вв.<br><em>(Старорусский язык)</em></td>
+            <td class="col-spelling"><code>ножницы</code></td>
+            <td class="col-transcription">
+                <span class="phonetic">[но́жницы]</span>
+                <button class="audio-btn" onclick="speak('ножницы')" title="Прослушать произношение">
+                    🔊 Озвучить
+                </button>
+            </td>
+            <td class="col-meaning">
+                Закрепление формы множественного числа (plurale tantum) для обозначения составного режущего предмета.
+                <span class="info-icon" onclick="showModal('ножницы', 'Слово окончательно перешло в категорию существительных, употребляющихся только во множественном числе, аналогично 'очки' или 'весы'.')" title="Нажмите для подробностей">ℹ️</span>
+            </td>
+        </tr>
+        
+        <tr class="table-row">
+            <td class="col-time">С XVIII в. — н.в.<br><em>(Современный русский язык)</em></td>
+            <td class="col-spelling"><code>ножницы</code></td>
+            <td class="col-transcription">
+                <span class="phonetic">[ˈnoʐnʲɪt͡sɨ] / [но́жницы]</span>
+                <button class="audio-btn" onclick="speak('ножницы')" title="Прослушать произношение">
+                    🔊 Озвучить
+                </button>
+            </td>
+            <td class="col-meaning">
+                Бытовой и промышленный инструмент из двух шарнирно скрепленных лезвий с кольцами для пальцев.
+                <span class="info-icon" onclick="showModal('ножницы', 'Современное значение охватывает как ручные бытовые ножницы, так и гидравлические/электрические промышленные установки.')" title="Нажмите для подробностей">ℹ️</span>
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+    <footer>
+        💡 Нажимайте на кнопку <strong>«🔊 Озвучить»</strong> для прослушивания аудио или на значок <strong>«ℹ️»</strong> для просмотра филологического комментария.
+    </footer>
+</div>
+
+<!-- Модальное окно для интерактивных всплывающих подсказок -->
+<div id="infoModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+        <span class="close-btn" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
+        <h3 id="modalTitle" style="color: var(--accent-color); margin-top:0;"></h3>
+        <p id="modalBody" style="line-height: 1.6;"></p>
+    </div>
+</div>
+
+<script>
+    // Озвучивание с помощью браузерного аудио-синтезатора (Web Speech API)
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel(); // сброс предыдущей очереди
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ru-RU';
+            utterance.rate = 0.85; // слегка замедленный темп для четкости
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert('Ваш браузер не поддерживает синтез речи. Текст: ' + text);
+        }
+    }
+
+    // Отображение всплывающего модального окна
+    function showModal(title, text) {
+        document.getElementById('modalTitle').innerText = 'Лингвистическая справка: ' + title;
+        document.getElementById('modalBody').innerText = text;
+        document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal(e) {
+        if (e.target.id === 'infoModal') {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
